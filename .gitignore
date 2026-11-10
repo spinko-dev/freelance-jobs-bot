@@ -1,0 +1,17 @@
+# Секреты и личные данные — никогда не коммитить
+.env
+data.db
+data.db-shm
+data.db-wal
+*.session
+*.session-journal
+
+# Локальное окружение и мусор
+venv/
+__pycache__/
+*.pyc
+Thumbs.db
+.DS_Store
+
+# Запускатели, специфичные для моего домашнего ПК
+*.bat

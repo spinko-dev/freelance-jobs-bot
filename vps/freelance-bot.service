@@ -1,0 +1,16 @@
+[Unit]
+Description=Freelance jobs Telegram bot (рассылка вакансий)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/freelance_jobs_bot
+ExecStart=/opt/freelance_jobs_bot/venv/bin/python bot.py
+# Перезапускать при сбое через 15 секунд
+Restart=always
+RestartSec=15
+MemoryMax=200M
+
+[Install]
+WantedBy=multi-user.target

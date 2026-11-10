@@ -1,0 +1,16 @@
+[Unit]
+Description=Freelance parser: каналы Telegram + connect.tg
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/freelance_jobs_bot
+ExecStart=/opt/freelance_jobs_bot/venv/bin/python webparser.py
+# Перезапускать при сбое через 15 секунд
+Restart=always
+RestartSec=15
+MemoryMax=400M
+
+[Install]
+WantedBy=multi-user.target
